@@ -253,12 +253,18 @@ const fetchResponses = async (options) => {
     printReport
 */
 const printReport = async (responses) => {
-  const report = responses
+  const { environment, server } = responses[0].wis.options;
+
+  const header = `\nprco-check-status\nenvironment: ${environment}\nserver: ${server}\n`;
+
+  const body = responses
     .map((res) => {
       return _.get(res, "wis.report", "");
     })
     .join("\n")
     .concat("\n\nFinished\n\n");
+
+  const report = header.concat(body);
 
   console.log(report);
 };
