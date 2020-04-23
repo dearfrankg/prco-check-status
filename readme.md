@@ -1,6 +1,6 @@
 # @cogent-labs/prco-check-status
 
-A utility written for PRCO that will check the status for an inspection request, report the results and download related pdf reports.
+A command line utility written for PRCO that will check the status for an inspection request from either WIS or OneGuard servers, then report the results and download related pdf reports.
 
 ## Installation
 
