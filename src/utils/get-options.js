@@ -1,7 +1,8 @@
 const parseArgs = require("minimist");
 const validator = require("validator");
 const path = require("path");
-require("dotenv").config();
+const envPath = path.resolve(__dirname, "../../.env");
+require("dotenv").config({ path: envPath });
 
 const usage = () => {
   const message = `USAGE:
