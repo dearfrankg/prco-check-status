@@ -52,7 +52,7 @@ const validatedEnv = () => {
   let reason = "";
   envVars.forEach((envVar) => {
     if (process.env[envVar] === undefined) {
-      reason += `Invalid env variable: ${envVar}`;
+      reason += `Invalid env variable: ${envVar}\n`;
     } else {
       validEnvVars[envVar] = process.env[envVar];
     }
@@ -71,7 +71,7 @@ const validatedEnv = () => {
 
   ["wis_username", "wis_password", "oneguard_username", "oneguard_password"].forEach((envVar) => {
     if (validEnvVars[envVar] === undefined) {
-      reason += `Invalid env variable: ${envVar}`;
+      reason += `Invalid env variable: ${envVar}\n`;
     }
   });
 
