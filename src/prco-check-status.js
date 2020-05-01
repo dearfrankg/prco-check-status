@@ -10,7 +10,6 @@ const oneguardCheckStatus = require("./modules/oneguard/oneguard").oneguardCheck
 */
 const prcoCheckStatus = async () => {
   const options = require("./utils/get-options.js").getOptions();
-  console.log("options :", options);
 
   return options.server === "wis"
     ? await wisCheckStatus(options)
