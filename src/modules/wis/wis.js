@@ -99,14 +99,14 @@ const downloadReport = async (response) => {
   const requestId = response.wis.request.requestId;
   const reportUrl = response.wis.json.Report;
 
+  const filename = path.basename(folderPath);
+  const filePath = path.join(folderPath, `${filename}.pdf`);
+
   if (!isRunningTests) {
     console.log(
       `downloading report: \nRequestId: ${requestId}\nReportUrl: ${reportUrl}\nPath: ${filePath}\n`
     );
   }
-
-  const filename = path.basename(folderPath);
-  const filePath = path.join(folderPath, `${filename}.pdf`);
 
   return downloadFile({ requestId, reportUrl, filePath });
 };
