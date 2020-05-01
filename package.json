@@ -29,5 +29,8 @@
       "./setupJest.js"
     ],
     "testEnvironment": "node"
+  },
+  "bin": {
+    "prcoCheckStatus": "./src/perco-text.js"
   }
 }

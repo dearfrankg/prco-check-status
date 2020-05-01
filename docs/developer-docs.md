@@ -1,36 +1,48 @@
 # Developer Docs
 
-## creating a CLI using node
+## using babel and esm
 
-## command line args
+    Don't really need it
 
-    dependency: command-line-args
+## install script to be used on the system
 
-## using es6 and import
+    Add section to package.json
 
-did not activate import because cli parser would not work
+        "bin": {
+            "prcoText": "./src/prco-text.js"
+        }
 
-<!-- activating import
+## processing CLI options
 
-    1. dependency: @babel/core @babel/babel-node
-    2. when importing use full file name with extension
-    3. add to package.json -- "type": "module"
+    Add dependency
 
-using the command line
-
-    babel-node --no-warnings --experimental-modules -->
+        minimist
 
 ## testing
 
-add to package.json
+    Mocking the fetch command
 
-     "jest": {
-         // configures jest to use mock fetch
-       "automock": false,
-       "setupFiles": [
-         "./setupJest.js"
-       ],
+        add dependency:
 
-       // avoid CORS errors
-       "testEnvironment": "node"
-     }
+            jest-fetch-mock
+
+        add setupJest.js file
+
+            //setupJest.js or similar file
+            require("jest-fetch-mock").enableMocks();
+
+        configure package.json
+
+            "jest": {
+                "automock": false,
+                "setupFiles": [
+                    "./setupJest.js"
+                ]
+            }
+
+    Avoid CORS errors while testing
+
+        "jest": {
+            ...
+            "testEnvironment": "node"
+        }
