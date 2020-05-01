@@ -256,7 +256,7 @@ const printReport = async (responses) => {
   if (isRunningTests) return;
 
   const { environment, server } = responses[0].wis.options;
-  const header = `\nprco-check-status\nenvironment: ${environment}\nserver: ${server}\n`;
+  const header = `\nprco-check-status\nserver: ${server}\nenvironment: ${environment}\n`;
   const body = responses
     .map((res) => {
       return _.get(res, "wis.report", "");
