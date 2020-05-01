@@ -9,6 +9,10 @@
   "scripts": {
     "test": "jest"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

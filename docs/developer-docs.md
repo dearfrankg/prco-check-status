@@ -46,3 +46,12 @@
             ...
             "testEnvironment": "node"
         }
+
+## publishing to npm
+
+    Configure package.json
+
+        "publishConfig": {
+            "registry": "https://registry.npmjs.org/",
+            "access": "public"
+        },
