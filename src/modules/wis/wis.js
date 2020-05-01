@@ -253,7 +253,7 @@ const fetchResponses = async (options) => {
     printReport
 */
 const printReport = async (responses) => {
-  if (!isRunningTests) return;
+  if (isRunningTests) return;
 
   const { environment, server } = responses[0].wis.options;
   const header = `\nprco-check-status\nenvironment: ${environment}\nserver: ${server}\n`;
