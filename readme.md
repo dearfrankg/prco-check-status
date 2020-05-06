@@ -2,42 +2,34 @@
 
 A command line utility written for PRCO that will check the status for an inspection request from either WIS or OneGuard servers, then report the results and download related pdf reports.
 
+## Prerequisites
+
+Node is required to use this module. Here is the best way to install Node:
+
+    install xcode if needed
+
+        xcode-select --install
+
+    create .bash_profile if needed
+
+        touch ~/.bash_profile
+
+    Install nvm
+
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+        source ~/.bash_profile
+
+    install node
+
+        nvm install 12
+
 ## Installation
-
-install xcode if needed
-
-    xcode-select --install
-
-create .bash_profile if needed
-
-    touch ~/.bash_profile
-
-Install nvm
-
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-    source ~/.bash_profile
-
-install node
-
-    nvm install v12.16.1
-
-install required node packages
 
     npm install -g @cogent-labs/prco-check-status
 
 ## Configure
 
-Use a .env file to store confidential content.
-
-create a .env file and link with module:
-
-    FILE=$HOME/protected/.env
-    LINK=$HOME/.nvm/versions/node/v12.16.1/lib/node_modules/@cogent-labs/prco-check-status/.env
-    mkdir -p $HOME/protected
-    touch $FILE
-    ln -s $FILE $LINK
-
-enter .env file: vi \$FILE
+Add your configuration via environment variables to the default location: `$HOME/protected/prco-check-status-env`
 
     wis_credentials=myusername,mypassword
     wis_test_url=https://test.www.company.com/...
@@ -49,6 +41,8 @@ enter .env file: vi \$FILE
     oneguard_prod_url=https://www.company.com/...
     oneguard_report_folder=/path/to/reports
 
+> You can use the `--config_env_file` option to configure another location if you like.
+
 ## Usage
 
 `prco-check-status` is a command that can be used on the command line.
@@ -59,17 +53,20 @@ enter .env file: vi \$FILE
 
         prco-check-status [options] requests...
 
-        options:
+        OPTIONS:
 
-            -e, --environment   environment to use: test or production -- defaults to test
-            -s, --server        server to call: wis or oneguard
-            -h, --help          show this usage text
+            -c, --config_env_file   location of file containing environment variables
+                                    defaults to $HOME/protected/check-status-env
+            -h, --help              display usage help
+            -e, --environment       environment to use: test or production -- defaults to test
+            -s, --server            server to call: wis or oneguard
+            -h, --help              show this usage text
 
-        requests:
+        REQUESTS:
 
             request-id,path-to-download
 
-        examples:
+        EXAMPLES:
 
             prco-check-status -h
 
