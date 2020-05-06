@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`checkStatus for wis when encountering a server error should return fomatted report with message: Server error 1`] = `
+Array [
+  Object {
+    "wis": undefined,
+  },
+]
+`;
+
+exports[`checkStatus for wis when passed a valid request should return fomatted report with one entry 1`] = `
+Array [
+  Object {
+    "wis": undefined,
+  },
+]
+`;
+
+exports[`checkStatus for wis when passed an invalid request should return fomatted report with one message: Status unavailable 1`] = `
+Array [
+  Object {
+    "wis": undefined,
+  },
+]
+`;
+
+exports[`checkStatus for wis when passed multiple invalid requests should return fomatted report with mutiple messages: Status unavailable 1`] = `
+Array [
+  Object {
+    "wis": undefined,
+  },
+  Object {
+    "wis": undefined,
+  },
+]
+`;
+
+exports[`checkStatus for wis when passed multiple valid requests should return fomatted report with mutiple entrys 1`] = `
+Array [
+  Object {
+    "wis": undefined,
+  },
+  Object {
+    "wis": undefined,
+  },
+]
+`;

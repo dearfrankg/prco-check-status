@@ -2,11 +2,11 @@ const rimraf = require("rimraf");
 const {
   getRequestSoapResponse,
   getMissingRequestSoapResponse,
-} = require("./__fixtures__/soap-envelope");
-const wisCheckStatus = require("./wis").wisCheckStatus;
+} = require("./__fixtures__/wis-envelope");
+const checkStatus = require("./check-status").checkStatus;
 const getOptions = require("../../utils/get-options").getOptions;
 
-describe("wisCheckStatus function", () => {
+describe("checkStatus for wis", () => {
   beforeAll(() => {
     rimraf.sync(__dirname + "/__downloads__/a/b/c/*");
     process.env.wis_credentials = "foo,bar";
@@ -35,7 +35,7 @@ describe("wisCheckStatus function", () => {
         "758317,/a/b/c/111",
       ];
       const options = await getOptions();
-      const responses = await wisCheckStatus(options);
+      const responses = await checkStatus(options);
 
       expect(fetch.mock.calls.length).toEqual(1);
       const responseList = responses.map((res) => ({
@@ -66,7 +66,7 @@ describe("wisCheckStatus function", () => {
         "758317,/a/b/c/333",
       ];
       const options = await getOptions();
-      const responses = await wisCheckStatus(options);
+      const responses = await checkStatus(options);
 
       expect(fetch.mock.calls.length).toEqual(2);
       const responseList = responses.map((res) => ({
@@ -95,7 +95,7 @@ describe("wisCheckStatus function", () => {
         "838317,/a/b/c/444",
       ];
       const options = await getOptions();
-      const responses = await wisCheckStatus(options);
+      const responses = await checkStatus(options);
 
       expect(fetch.mock.calls.length).toEqual(1);
       const responseList = responses.map((res) => ({
@@ -126,7 +126,7 @@ describe("wisCheckStatus function", () => {
         "838317,/a/b/c/666",
       ];
       const options = await getOptions();
-      const responses = await wisCheckStatus(options);
+      const responses = await checkStatus(options);
 
       expect(fetch.mock.calls.length).toEqual(2);
       const responseList = responses.map((res) => ({
@@ -155,7 +155,7 @@ describe("wisCheckStatus function", () => {
         "758317,/a/b/c/777",
       ];
       const options = await getOptions();
-      const responses = await wisCheckStatus(options);
+      const responses = await checkStatus(options);
 
       expect(fetch.mock.calls.length).toEqual(1);
       const responseList = responses.map((res) => ({
