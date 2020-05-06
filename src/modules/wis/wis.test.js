@@ -1,5 +1,8 @@
 const rimraf = require("rimraf");
-const { getRequestSoapResponse, getMissingRequestSoapResponse } = require("./soap-envelope");
+const {
+  getRequestSoapResponse,
+  getMissingRequestSoapResponse,
+} = require("./__fixtures__/soap-envelope");
 const wisCheckStatus = require("./wis").wisCheckStatus;
 const getOptions = require("../../utils/get-options").getOptions;
 
