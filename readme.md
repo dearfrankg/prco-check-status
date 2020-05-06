@@ -69,9 +69,9 @@ Add your configuration via environment variables to the default location: `$HOME
 
             prco-check-status -h
 
-            prco-check-status -e production -s wis 758317/a/b 876321,/q/a
+            prco-check-status -e production -s wis 758317,/a/b 876321,/q/a
 
-            prco-check-status --environment test --server oneguard 758317/a/b 876321,/q/a
+            prco-check-status --environment test --server oneguard 758317,/a/b 876321,/q/a
 
 ## Details
 

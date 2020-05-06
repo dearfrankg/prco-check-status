@@ -1,0 +1,392 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`get-options invalid options when command given invalid 'config_env_file' option (file not found) should show error and usage 1`] = `
+Object {
+  "error": [Error: Error in get-options],
+  "errorMessage": "
+Missing env file: /foo
+
+USAGE:
+
+        prco-check-status [options] requests...
+
+        OPTIONS:
+
+            -c, --config_env_file   location of file containing environment variables
+                                    defaults to $HOME/protected/check-status-env
+            -h, --help              display usage help
+            -e, --environment       environment to use: test or production -- defaults to test
+            -s, --server            server to call: wis or oneguard
+
+        REQUESTS:
+
+            request-id,path-to-download
+
+        EXAMPLES:
+
+            prco-check-status -h
+
+            prco-check-status -e production -s wis 758317,/a/b 876321,/q/a
+
+            prco-check-status --environment test --server oneguard 758317,/a/b 876321,/q/a
+
+
+  ",
+}
+`;
+
+exports[`get-options invalid options when command given invalid 'environment' option (not test or production) should show error and usage 1`] = `
+Object {
+  "error": [Error: Error in get-options],
+  "errorMessage": "
+Invalid environment: choose test or production.
+Invalid server: choose wis or oneguard.
+Invalid requests: no request entered.
+
+
+USAGE:
+
+        prco-check-status [options] requests...
+
+        OPTIONS:
+
+            -c, --config_env_file   location of file containing environment variables
+                                    defaults to $HOME/protected/check-status-env
+            -h, --help              display usage help
+            -e, --environment       environment to use: test or production -- defaults to test
+            -s, --server            server to call: wis or oneguard
+
+        REQUESTS:
+
+            request-id,path-to-download
+
+        EXAMPLES:
+
+            prco-check-status -h
+
+            prco-check-status -e production -s wis 758317,/a/b 876321,/q/a
+
+            prco-check-status --environment test --server oneguard 758317,/a/b 876321,/q/a
+
+
+  ",
+}
+`;
+
+exports[`get-options invalid options when command given invalid 'request' option should show error and usage when missing comma 1`] = `
+Object {
+  "error": [Error: Error in get-options],
+  "errorMessage": "
+Invalid request
+
+USAGE:
+
+        prco-check-status [options] requests...
+
+        OPTIONS:
+
+            -c, --config_env_file   location of file containing environment variables
+                                    defaults to $HOME/protected/check-status-env
+            -h, --help              display usage help
+            -e, --environment       environment to use: test or production -- defaults to test
+            -s, --server            server to call: wis or oneguard
+
+        REQUESTS:
+
+            request-id,path-to-download
+
+        EXAMPLES:
+
+            prco-check-status -h
+
+            prco-check-status -e production -s wis 758317,/a/b 876321,/q/a
+
+            prco-check-status --environment test --server oneguard 758317,/a/b 876321,/q/a
+
+
+  ",
+}
+`;
+
+exports[`get-options invalid options when command given invalid 'request' option should show error and usage when missing hierarchical path 1`] = `
+Object {
+  "error": [Error: Error in get-options],
+  "errorMessage": "
+Invalid request
+
+USAGE:
+
+        prco-check-status [options] requests...
+
+        OPTIONS:
+
+            -c, --config_env_file   location of file containing environment variables
+                                    defaults to $HOME/protected/check-status-env
+            -h, --help              display usage help
+            -e, --environment       environment to use: test or production -- defaults to test
+            -s, --server            server to call: wis or oneguard
+
+        REQUESTS:
+
+            request-id,path-to-download
+
+        EXAMPLES:
+
+            prco-check-status -h
+
+            prco-check-status -e production -s wis 758317,/a/b 876321,/q/a
+
+            prco-check-status --environment test --server oneguard 758317,/a/b 876321,/q/a
+
+
+  ",
+}
+`;
+
+exports[`get-options invalid options when command given invalid 'request' option should show error and usage when requestId not numeric 1`] = `
+Object {
+  "error": [Error: Error in get-options],
+  "errorMessage": "
+invalid requestId: non-numeric: 75A87
+
+USAGE:
+
+        prco-check-status [options] requests...
+
+        OPTIONS:
+
+            -c, --config_env_file   location of file containing environment variables
+                                    defaults to $HOME/protected/check-status-env
+            -h, --help              display usage help
+            -e, --environment       environment to use: test or production -- defaults to test
+            -s, --server            server to call: wis or oneguard
+
+        REQUESTS:
+
+            request-id,path-to-download
+
+        EXAMPLES:
+
+            prco-check-status -h
+
+            prco-check-status -e production -s wis 758317,/a/b 876321,/q/a
+
+            prco-check-status --environment test --server oneguard 758317,/a/b 876321,/q/a
+
+
+  ",
+}
+`;
+
+exports[`get-options invalid options when command given invalid 'service' option (not wis or oneguard) should show error and usage 1`] = `
+Object {
+  "error": [Error: Error in get-options],
+  "errorMessage": "
+Invalid server: choose wis or oneguard.
+Invalid requests: no request entered.
+
+
+USAGE:
+
+        prco-check-status [options] requests...
+
+        OPTIONS:
+
+            -c, --config_env_file   location of file containing environment variables
+                                    defaults to $HOME/protected/check-status-env
+            -h, --help              display usage help
+            -e, --environment       environment to use: test or production -- defaults to test
+            -s, --server            server to call: wis or oneguard
+
+        REQUESTS:
+
+            request-id,path-to-download
+
+        EXAMPLES:
+
+            prco-check-status -h
+
+            prco-check-status -e production -s wis 758317,/a/b 876321,/q/a
+
+            prco-check-status --environment test --server oneguard 758317,/a/b 876321,/q/a
+
+
+  ",
+}
+`;
+
+exports[`get-options invalid options when command given no options should show error and usage 1`] = `
+Object {
+  "error": [Error: Error in get-options],
+  "errorMessage": "
+Invalid server: choose wis or oneguard.
+Invalid requests: no request entered.
+
+
+USAGE:
+
+        prco-check-status [options] requests...
+
+        OPTIONS:
+
+            -c, --config_env_file   location of file containing environment variables
+                                    defaults to $HOME/protected/check-status-env
+            -h, --help              display usage help
+            -e, --environment       environment to use: test or production -- defaults to test
+            -s, --server            server to call: wis or oneguard
+
+        REQUESTS:
+
+            request-id,path-to-download
+
+        EXAMPLES:
+
+            prco-check-status -h
+
+            prco-check-status -e production -s wis 758317,/a/b 876321,/q/a
+
+            prco-check-status --environment test --server oneguard 758317,/a/b 876321,/q/a
+
+
+  ",
+}
+`;
+
+exports[`get-options invalid options when oneguard_credentials poorly formatted should show error and usage 1`] = `
+Object {
+  "error": [Error: Error in get-options],
+  "errorMessage": "
+Invalid formatting of oneguard credentials
+
+USAGE:
+
+        prco-check-status [options] requests...
+
+        OPTIONS:
+
+            -c, --config_env_file   location of file containing environment variables
+                                    defaults to $HOME/protected/check-status-env
+            -h, --help              display usage help
+            -e, --environment       environment to use: test or production -- defaults to test
+            -s, --server            server to call: wis or oneguard
+
+        REQUESTS:
+
+            request-id,path-to-download
+
+        EXAMPLES:
+
+            prco-check-status -h
+
+            prco-check-status -e production -s wis 758317,/a/b 876321,/q/a
+
+            prco-check-status --environment test --server oneguard 758317,/a/b 876321,/q/a
+
+
+  ",
+}
+`;
+
+exports[`get-options invalid options when wis_credentials poorly formatted should show error and usage 1`] = `
+Object {
+  "error": [Error: Error in get-options],
+  "errorMessage": "
+Invalid formatting of wis credentials
+
+USAGE:
+
+        prco-check-status [options] requests...
+
+        OPTIONS:
+
+            -c, --config_env_file   location of file containing environment variables
+                                    defaults to $HOME/protected/check-status-env
+            -h, --help              display usage help
+            -e, --environment       environment to use: test or production -- defaults to test
+            -s, --server            server to call: wis or oneguard
+
+        REQUESTS:
+
+            request-id,path-to-download
+
+        EXAMPLES:
+
+            prco-check-status -h
+
+            prco-check-status -e production -s wis 758317,/a/b 876321,/q/a
+
+            prco-check-status --environment test --server oneguard 758317,/a/b 876321,/q/a
+
+
+  ",
+}
+`;
+
+exports[`get-options valid options when comand given 'all valid options' including including paths with spaces should return object containing the valid options 1`] = `
+Object {
+  "environment": "test",
+  "password": "bar",
+  "reportFolder": "/Users/frankg/Desktop/reports",
+  "requests": Array [
+    Object {
+      "folderPath": "/foo/bar/b u n",
+      "requestId": "768432",
+    },
+  ],
+  "server": "wis",
+  "url": "https://stagingnew.wisinspections.com/wiswebservice.asmx?WSDL",
+  "username": "foo",
+}
+`;
+
+exports[`get-options valid options when comand given 'all valid options' should return object containing the valid options 1`] = `
+Object {
+  "environment": "test",
+  "password": "bar",
+  "reportFolder": "/Users/frankg/Desktop/reports",
+  "requests": Array [
+    Object {
+      "folderPath": "/foo/bar",
+      "requestId": "768432",
+    },
+  ],
+  "server": "wis",
+  "url": "https://stagingnew.wisinspections.com/wiswebservice.asmx?WSDL",
+  "username": "foo",
+}
+`;
+
+exports[`get-options valid options when command given 'help' option should only display usage 1`] = `
+Object {
+  "error": [Error: Error in get-options],
+  "errorMessage": "
+
+
+USAGE:
+
+        prco-check-status [options] requests...
+
+        OPTIONS:
+
+            -c, --config_env_file   location of file containing environment variables
+                                    defaults to $HOME/protected/check-status-env
+            -h, --help              display usage help
+            -e, --environment       environment to use: test or production -- defaults to test
+            -s, --server            server to call: wis or oneguard
+
+        REQUESTS:
+
+            request-id,path-to-download
+
+        EXAMPLES:
+
+            prco-check-status -h
+
+            prco-check-status -e production -s wis 758317,/a/b 876321,/q/a
+
+            prco-check-status --environment test --server oneguard 758317,/a/b 876321,/q/a
+
+
+  ",
+}
+`;
