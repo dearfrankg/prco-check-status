@@ -35,6 +35,6 @@
     "testEnvironment": "node"
   },
   "bin": {
-    "prcoCheckStatus": "./src/prco-check-status.js"
+    "prco-check-status": "./src/prco-check-status.js"
   }
 }
