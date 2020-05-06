@@ -60,7 +60,6 @@ Add your configuration via environment variables to the default location: `$HOME
             -h, --help              display usage help
             -e, --environment       environment to use: test or production -- defaults to test
             -s, --server            server to call: wis or oneguard
-            -h, --help              show this usage text
 
         REQUESTS:
 
