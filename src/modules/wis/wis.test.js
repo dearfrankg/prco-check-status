@@ -6,6 +6,8 @@ const getOptions = require("../../utils/get-options").getOptions;
 describe("wisCheckStatus function", () => {
   beforeAll(() => {
     rimraf.sync(__dirname + "/__downloads__/a/b/c/*");
+    process.env.wis_credentials = "foo,bar";
+    process.env.onegard_credentials = "foo,bar";
   });
 
   beforeEach(() => {
@@ -29,7 +31,7 @@ describe("wisCheckStatus function", () => {
         "wis",
         "758317,/a/b/c/111",
       ];
-      const options = getOptions();
+      const options = await getOptions();
       const responses = await wisCheckStatus(options);
 
       expect(fetch.mock.calls.length).toEqual(1);
@@ -60,7 +62,7 @@ describe("wisCheckStatus function", () => {
         "758317,/a/b/c/222",
         "758317,/a/b/c/333",
       ];
-      const options = getOptions();
+      const options = await getOptions();
       const responses = await wisCheckStatus(options);
 
       expect(fetch.mock.calls.length).toEqual(2);
@@ -89,7 +91,7 @@ describe("wisCheckStatus function", () => {
         "wis",
         "838317,/a/b/c/444",
       ];
-      const options = getOptions();
+      const options = await getOptions();
       const responses = await wisCheckStatus(options);
 
       expect(fetch.mock.calls.length).toEqual(1);
@@ -120,7 +122,7 @@ describe("wisCheckStatus function", () => {
         "838317,/a/b/c/555",
         "838317,/a/b/c/666",
       ];
-      const options = getOptions();
+      const options = await getOptions();
       const responses = await wisCheckStatus(options);
 
       expect(fetch.mock.calls.length).toEqual(2);
@@ -149,7 +151,7 @@ describe("wisCheckStatus function", () => {
         "wis",
         "758317,/a/b/c/777",
       ];
-      const options = getOptions();
+      const options = await getOptions();
       const responses = await wisCheckStatus(options);
 
       expect(fetch.mock.calls.length).toEqual(1);

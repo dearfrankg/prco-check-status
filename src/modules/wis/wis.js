@@ -274,7 +274,7 @@ const printReport = async (responses) => {
 const wisCheckStatus = async (options) => {
   const responses = await fetchResponses(options);
   await printReport(responses);
-  await downloadReports(responses);
+  downloadReports(responses);
 
   return responses;
 };

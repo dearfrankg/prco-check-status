@@ -2,18 +2,23 @@
 
 global.fetch = require("cross-fetch");
 
+const getOptions = require("./utils/get-options").getOptions;
 const wisCheckStatus = require("./modules/wis/wis").wisCheckStatus;
 const oneguardCheckStatus = require("./modules/oneguard/oneguard").oneguardCheckStatus;
 
 /*
-    prcoCheckStatus
+    prco-check-status
 */
 const prcoCheckStatus = async () => {
-  const options = require("./utils/get-options.js").getOptions();
-
-  return options.server === "wis"
-    ? await wisCheckStatus(options)
-    : await oneguardCheckStatus(options);
+  getOptions()
+    .then(async (options) => {
+      const checkStatus = options.server === "wis" ? wisCheckStatus : oneguardCheckStatus;
+      return checkStatus(options);
+    })
+    .catch((e) => {
+      console.log(e.errorMessage);
+      return e;
+    });
 };
 
 prcoCheckStatus();
