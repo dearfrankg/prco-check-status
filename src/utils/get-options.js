@@ -104,7 +104,6 @@ const validRequests = async (requests) => {
     }
 
     folderPath = path.normalize(folderPath);
-    const containsSpaces = /.*\s.*/.test(folderPath);
     const containsTrailingSlash = /.*\/$/.test(folderPath);
     if (containsTrailingSlash) {
       folderPath.substr(0, -1);
@@ -119,7 +118,7 @@ const validRequests = async (requests) => {
 };
 
 const getFilteredObject = (obj, allowedList) =>
-  Object.fromEntries(Object.entries(obj).filter(([key, val]) => allowedList.includes(key)));
+  Object.fromEntries(Object.entries(obj).filter(([key]) => allowedList.includes(key)));
 
 const validatedOptions = async () => {
   var options = parseArgs(process.argv.slice(2), {

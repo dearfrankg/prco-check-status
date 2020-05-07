@@ -76,7 +76,7 @@ const isReasonToAbortDownload = (response) => {
 /*
     downloadFile
 */
-const downloadFile = async ({ requestId, reportUrl, filePath }) => {
+const downloadFile = async ({ reportUrl, filePath }) => {
   return axios({
     method: "get",
     url: reportUrl,
@@ -121,7 +121,7 @@ const downloadReport = async (response) => {
 /*
     downloadReports
 */
-const downloadReports = async (responses, filePath) => {
+const downloadReports = async (responses) => {
   responses.forEach((response) => downloadReport(response));
 };
 

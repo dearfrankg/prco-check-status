@@ -1,32 +1,5 @@
 const getOptions = require("./get-options").getOptions;
 
-const getCommandOptions = (options) => {
-  const commandOptions = {
-    language: "node",
-    command: "prco-text",
-    from: "415-935-3327",
-    to: "415-935-3327",
-    message: "hi",
-  };
-
-  Object.keys(options).forEach((option) => {
-    commandOptions[option] = options[option];
-  });
-
-  const result = [
-    commandOptions["language"],
-    commandOptions["command"],
-    "--from",
-    commandOptions["from"],
-    "--to",
-    commandOptions["to"],
-    "--message",
-    commandOptions["message"],
-  ];
-
-  return result;
-};
-
 describe("get-options", () => {
   let response;
 

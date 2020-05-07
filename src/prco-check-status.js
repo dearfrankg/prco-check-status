@@ -10,7 +10,7 @@ const checkStatus = require("./modules/check-status");
 */
 const prcoCheckStatus = async () => {
   getOptions()
-    .then(async (options) => {
+    .then((options) => {
       return checkStatus(options);
     })
     .catch((e) => {
