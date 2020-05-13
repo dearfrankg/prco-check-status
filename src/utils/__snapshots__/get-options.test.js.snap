@@ -326,7 +326,7 @@ exports[`get-options valid options when comand given 'all valid options' includi
 Object {
   "environment": "test",
   "password": "bar",
-  "reportFolder": "/Users/frankg/Desktop/reports",
+  "reportFolder": "/Users/frankg/Desktop/prco",
   "requests": Array [
     Object {
       "folderPath": "/foo/bar/b u n",
@@ -343,7 +343,7 @@ exports[`get-options valid options when comand given 'all valid options' should 
 Object {
   "environment": "test",
   "password": "bar",
-  "reportFolder": "/Users/frankg/Desktop/reports",
+  "reportFolder": "/Users/frankg/Desktop/prco",
   "requests": Array [
     Object {
       "folderPath": "/foo/bar",
