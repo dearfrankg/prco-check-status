@@ -1,4 +1,4 @@
-const getRequestSoapResponse = () => `
+const wisSoapResponseGood = () => `
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <soap:Body>
@@ -38,7 +38,7 @@ const getRequestSoapResponse = () => `
 </soap:Envelope>
 `;
 
-const getMissingRequestSoapResponse = () => `
+const wisSoapResponseMissing = () => `
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <soap:Body>
@@ -68,4 +68,4 @@ const getMissingRequestSoapResponse = () => `
     </soap:Body>
 </soap:Envelope>`;
 
-module.exports = { getRequestSoapResponse, getMissingRequestSoapResponse };
+module.exports = { wisSoapResponseGood, wisSoapResponseMissing };

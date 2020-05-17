@@ -131,30 +131,36 @@ const downloadReports = async (responses) => {
 const reportFromJson = (response) => {
   const json = response.prco.json;
   const requestId = response.prco.request.requestId;
-  const missingJson = !json || json === null;
+  const isWisReport = response.prco.options.server === "wis";
+  const missingJson = !json || json === null || (!isWisReport && !json.status);
+
   if (missingJson) return `\n---\nStatus unavailable for: ${requestId}\n\n`;
 
-  let report = "\n---\n";
-
   const genWisReport = () => {
-    ["RequestID", "Details", "Images", "Report"].map((field) => {
-      if (json[field]) {
-        report = report.concat(`${field}: ${json[field]}\n`);
-      }
-    });
+    return ["RequestID", "Details", "Images", "Report"]
+      .map((field) => {
+        if (json[field]) {
+          return `${field}: ${json[field]}`;
+        }
+      })
+      .join("\n");
   };
 
   const genOneguardReport = () => {
-    report = report.concat(`requestId: ${requestId}\n`);
-    ["status", "state", "message", "report"].map((field) => {
-      if (json[field]) {
-        report = report.concat(`${field}: ${json[field]}\n`);
-      }
-    });
+    return (
+      `requestId: ${requestId}\n` +
+      ["status", "state", "message", "report"]
+        .map((field) => {
+          if (json[field]) {
+            return `${field}: ${json[field]}`;
+          }
+        })
+        .join("\n")
+    );
   };
 
-  const wisServer = response.prco.options.server === "wis";
-  wisServer ? genWisReport() : genOneguardReport();
+  let report = "\n---\n";
+  report = report.concat(isWisReport ? genWisReport() : genOneguardReport());
 
   return report;
 };
@@ -164,6 +170,7 @@ const reportFromJson = (response) => {
 */
 const xml2json = async (response) => {
   const xml = await response.text();
+  response.prco.text = { text: xml };
   const jsonObj = parser.parse(xml);
 
   const wisPrefix =
@@ -292,6 +299,8 @@ const printReport = async (responses) => {
     .concat("\n\nFinished\n\n");
 
   const report = header.concat(body);
+
+  responses[0].prco.finalReport = report;
 
   if (!isRunningTests) console.log(report);
 };
