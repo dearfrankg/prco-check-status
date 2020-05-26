@@ -95,7 +95,13 @@ const downloadFile = async ({ reportUrl, filePath }) => {
     downloadReport
 */
 const downloadReport = async (response) => {
-  if (isReasonToAbortDownload(response)) return Promise.resolve("aborted");
+  if (isReasonToAbortDownload(response)) return;
+
+  const wisServer = response.prco.options.server === "wis";
+  const isMissingWisImagesUrl = wisServer && !!response.prco.json.Images;
+
+  // wis requested not to download unless images url is available
+  if (isMissingWisImagesUrl) return;
 
   const containerFolder = isRunningTests
     ? path.join(__dirname, "/__downloads__")
@@ -103,7 +109,6 @@ const downloadReport = async (response) => {
   const folderPath = path.join(containerFolder, response.prco.request.folderPath);
   const requestId = response.prco.request.requestId;
 
-  const wisServer = response.prco.options.server === "wis";
   const reportUrl = wisServer ? response.prco.json.Report : response.prco.json.report;
 
   const filename = path.basename(folderPath);
