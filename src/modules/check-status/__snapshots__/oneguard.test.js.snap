@@ -1,6 +1,119 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`prco-check-status for oneguard when encountering a server error should return fomatted report with message: Server error 1`] = `
+exports[`prco-check-status oneguard support production environment when encountering a server error should return fomatted report with message: Server error 1`] = `
+"
+prco-check-status
+server: oneguard
+environment: production
+
+---
+Server error for request id: 197961
+
+
+Finished
+
+"
+`;
+
+exports[`prco-check-status oneguard support production environment when passed a valid request using paths with spaces should return fomatted report with one entry 1`] = `
+"
+prco-check-status
+server: oneguard
+environment: production
+
+---
+requestId: 197961
+status: closed
+state: 7
+message: Inspection Request Complete
+report: https://test.oneguardinspections.com/components/com_rstickets/files/2020/05/04/PRCOTEST7/PRCO TEST-0000000007_PDF_Report.pdf
+
+Finished
+
+"
+`;
+
+exports[`prco-check-status oneguard support production environment when passed a valid request using paths without spaces should return fomatted report with one entry 1`] = `
+"
+prco-check-status
+server: oneguard
+environment: production
+
+---
+requestId: 197961
+status: closed
+state: 7
+message: Inspection Request Complete
+report: https://test.oneguardinspections.com/components/com_rstickets/files/2020/05/04/PRCOTEST7/PRCO TEST-0000000007_PDF_Report.pdf
+
+Finished
+
+"
+`;
+
+exports[`prco-check-status oneguard support production environment when passed an invalid request should return fomatted report with one message: Status unavailable 1`] = `
+"
+prco-check-status
+server: oneguard
+environment: production
+
+---
+Status unavailable for: 197961
+
+
+
+Finished
+
+"
+`;
+
+exports[`prco-check-status oneguard support production environment when passed multiple invalid requests should return fomatted report with mutiple messages: Status unavailable 1`] = `
+"
+prco-check-status
+server: oneguard
+environment: production
+
+---
+Status unavailable for: 197961
+
+
+
+---
+Status unavailable for: 196361
+
+
+
+Finished
+
+"
+`;
+
+exports[`prco-check-status oneguard support production environment when passed multiple valid requests should return fomatted report with mutiple entrys 1`] = `
+"
+prco-check-status
+server: oneguard
+environment: production
+
+---
+requestId: 197961
+status: closed
+state: 7
+message: Inspection Request Complete
+report: https://test.oneguardinspections.com/components/com_rstickets/files/2020/05/04/PRCOTEST7/PRCO TEST-0000000007_PDF_Report.pdf
+
+---
+requestId: 197961
+status: closed
+state: 7
+message: Inspection Request Complete
+report: https://test.oneguardinspections.com/components/com_rstickets/files/2020/05/04/PRCOTEST7/PRCO TEST-0000000007_PDF_Report.pdf
+
+Finished
+
+"
+`;
+
+exports[`prco-check-status oneguard support test environment when encountering a server error should return fomatted report with message: Server error 1`] = `
 "
 prco-check-status
 server: oneguard
@@ -15,7 +128,7 @@ Finished
 "
 `;
 
-exports[`prco-check-status for oneguard when passed a valid request and paths that have spaces should return fomatted report with one entry 1`] = `
+exports[`prco-check-status oneguard support test environment when passed a valid request using paths with spaces should return fomatted report with one entry 1`] = `
 "
 prco-check-status
 server: oneguard
@@ -33,7 +146,7 @@ Finished
 "
 `;
 
-exports[`prco-check-status for oneguard when passed a valid request should return fomatted report with one entry 1`] = `
+exports[`prco-check-status oneguard support test environment when passed a valid request using paths without spaces should return fomatted report with one entry 1`] = `
 "
 prco-check-status
 server: oneguard
@@ -51,7 +164,7 @@ Finished
 "
 `;
 
-exports[`prco-check-status for oneguard when passed an invalid request should return fomatted report with one message: Status unavailable 1`] = `
+exports[`prco-check-status oneguard support test environment when passed an invalid request should return fomatted report with one message: Status unavailable 1`] = `
 "
 prco-check-status
 server: oneguard
@@ -67,7 +180,7 @@ Finished
 "
 `;
 
-exports[`prco-check-status for oneguard when passed multiple invalid requests should return fomatted report with mutiple messages: Status unavailable 1`] = `
+exports[`prco-check-status oneguard support test environment when passed multiple invalid requests should return fomatted report with mutiple messages: Status unavailable 1`] = `
 "
 prco-check-status
 server: oneguard
@@ -88,7 +201,7 @@ Finished
 "
 `;
 
-exports[`prco-check-status for oneguard when passed multiple valid requests should return fomatted report with mutiple entrys 1`] = `
+exports[`prco-check-status oneguard support test environment when passed multiple valid requests should return fomatted report with mutiple entrys 1`] = `
 "
 prco-check-status
 server: oneguard
