@@ -98,7 +98,7 @@ const downloadReport = async (response) => {
   if (isReasonToAbortDownload(response)) return;
 
   const wisServer = response.prco.options.server === "wis";
-  const isMissingWisImagesUrl = wisServer && !!response.prco.json.Images;
+  const isMissingWisImagesUrl = wisServer && !response.prco.json.Images;
 
   // wis requested not to download unless images url is available
   if (isMissingWisImagesUrl) return;
