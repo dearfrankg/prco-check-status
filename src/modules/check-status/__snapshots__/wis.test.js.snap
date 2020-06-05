@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`prco-check-status for wis production environment when encountering a server error should return fomatted report with message: Server error 1`] = `
+exports[`prco-check-status wis support production environment when encountering a server error should return fomatted report with message: Server error 1`] = `
 "
 prco-check-status
 server: wis
@@ -15,7 +15,7 @@ Finished
 "
 `;
 
-exports[`prco-check-status for wis production environment when passed a valid request using paths with spaces should return fomatted report with one entry 1`] = `
+exports[`prco-check-status wis support production environment when passed a valid request using paths with spaces should return fomatted report with one entry 1`] = `
 "
 prco-check-status
 server: wis
@@ -32,7 +32,7 @@ Finished
 "
 `;
 
-exports[`prco-check-status for wis production environment when passed a valid request using paths without spaces should return fomatted report with one entry 1`] = `
+exports[`prco-check-status wis support production environment when passed a valid request using paths without spaces should return fomatted report with one entry 1`] = `
 "
 prco-check-status
 server: wis
@@ -49,7 +49,7 @@ Finished
 "
 `;
 
-exports[`prco-check-status for wis production environment when passed an invalid request should return fomatted report with one message: Status unavailable 1`] = `
+exports[`prco-check-status wis support production environment when passed an invalid request should return fomatted report with one message: Status unavailable 1`] = `
 "
 prco-check-status
 server: wis
@@ -65,7 +65,7 @@ Finished
 "
 `;
 
-exports[`prco-check-status for wis production environment when passed multiple invalid requests should return fomatted report with mutiple messages: Status unavailable 1`] = `
+exports[`prco-check-status wis support production environment when passed multiple invalid requests should return fomatted report with mutiple messages: Status unavailable 1`] = `
 "
 prco-check-status
 server: wis
@@ -86,11 +86,120 @@ Finished
 "
 `;
 
-exports[`prco-check-status for wis production environment when passed multiple valid requests should return fomatted report with mutiple entrys 1`] = `
+exports[`prco-check-status wis support production environment when passed multiple valid requests should return fomatted report with mutiple entrys 1`] = `
 "
 prco-check-status
 server: wis
 environment: production
+
+---
+RequestID: 758317
+Details: http://www.wisinspections.com/Customer/InspectionDetails.aspx?requestID=iiHiK1bYlMo%%
+Images: http://www.wisinspections.com/Customer/InspectionPictures.aspx?requestID=iiHiK1bYlMo%%
+Report: http://www.wisinspections.com/Customer/InspectionReport.aspx?requestID=iiHiK1bYlMo%%
+
+---
+RequestID: 758317
+Details: http://www.wisinspections.com/Customer/InspectionDetails.aspx?requestID=iiHiK1bYlMo%%
+Images: http://www.wisinspections.com/Customer/InspectionPictures.aspx?requestID=iiHiK1bYlMo%%
+Report: http://www.wisinspections.com/Customer/InspectionReport.aspx?requestID=iiHiK1bYlMo%%
+
+Finished
+
+"
+`;
+
+exports[`prco-check-status wis support test environment when encountering a server error should return fomatted report with message: Server error 1`] = `
+"
+prco-check-status
+server: wis
+environment: test
+
+---
+Server error for request id: 758317
+
+
+Finished
+
+"
+`;
+
+exports[`prco-check-status wis support test environment when passed a valid request using paths with spaces should return fomatted report with one entry 1`] = `
+"
+prco-check-status
+server: wis
+environment: test
+
+---
+RequestID: 758317
+Details: http://www.wisinspections.com/Customer/InspectionDetails.aspx?requestID=iiHiK1bYlMo%%
+Images: http://www.wisinspections.com/Customer/InspectionPictures.aspx?requestID=iiHiK1bYlMo%%
+Report: http://www.wisinspections.com/Customer/InspectionReport.aspx?requestID=iiHiK1bYlMo%%
+
+Finished
+
+"
+`;
+
+exports[`prco-check-status wis support test environment when passed a valid request using paths without spaces should return fomatted report with one entry 1`] = `
+"
+prco-check-status
+server: wis
+environment: test
+
+---
+RequestID: 758317
+Details: http://www.wisinspections.com/Customer/InspectionDetails.aspx?requestID=iiHiK1bYlMo%%
+Images: http://www.wisinspections.com/Customer/InspectionPictures.aspx?requestID=iiHiK1bYlMo%%
+Report: http://www.wisinspections.com/Customer/InspectionReport.aspx?requestID=iiHiK1bYlMo%%
+
+Finished
+
+"
+`;
+
+exports[`prco-check-status wis support test environment when passed an invalid request should return fomatted report with one message: Status unavailable 1`] = `
+"
+prco-check-status
+server: wis
+environment: test
+
+---
+Status unavailable for: 838317
+
+
+
+Finished
+
+"
+`;
+
+exports[`prco-check-status wis support test environment when passed multiple invalid requests should return fomatted report with mutiple messages: Status unavailable 1`] = `
+"
+prco-check-status
+server: wis
+environment: test
+
+---
+Status unavailable for: 838317
+
+
+
+---
+Status unavailable for: 838317
+
+
+
+Finished
+
+"
+`;
+
+exports[`prco-check-status wis support test environment when passed multiple valid requests should return fomatted report with mutiple entrys 1`] = `
+"
+prco-check-status
+server: wis
+environment: test
 
 ---
 RequestID: 758317
