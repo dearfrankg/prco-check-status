@@ -177,6 +177,7 @@ const xml2json = async (response) => {
   const xml = await response.text();
   response.prco.text = { text: xml };
   const jsonObj = parser.parse(xml);
+  const isUsingWis = response.prco.options.server === "wis";
 
   const wisPrefix =
     "soap:Envelope.soap:Body.CheckStatusResponse.CheckStatusResult.diffgr:diffgram.NewDataSet.tblInspectionRequest";
@@ -184,9 +185,13 @@ const xml2json = async (response) => {
   const oneGuardPrefix =
     "SOAP-ENV:Envelope.SOAP-ENV:Body.ns1:GetRequestResponse.RequestResponseResult";
 
-  const prefix = response.prco.options.server === "wis" ? wisPrefix : oneGuardPrefix;
-
+  const prefix = isUsingWis ? wisPrefix : oneGuardPrefix;
   const json = _.get(jsonObj, prefix, null);
+  const isMissingWisImages = isUsingWis && json !== null && !_.get(json, "Images", "");
+
+  if (isMissingWisImages) {
+    delete json.Report;
+  }
 
   return json;
 };
